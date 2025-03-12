@@ -10,7 +10,6 @@ import { Link } from "@tanstack/react-router";
 
 type FormValues = {
   email: string;
-  password: string;
 };
 
 const formSchema = z.object({
@@ -20,27 +19,13 @@ const formSchema = z.object({
       message: "Email is required",
     })
     .email({ message: "Invalid email format" }),
-  password: z
-    .string()
-    .min(8, { message: "Password must be at least 8 characters" })
-    .regex(/[A-Z]/, {
-      message: "Password must contain at least one uppercase letter",
-    })
-    .regex(/[a-z]/, {
-      message: "Password must contain at least one lowercase letter",
-    })
-    .regex(/[0-9]/, { message: "Password must contain at least one number" })
-    .regex(/[^A-Za-z0-9]/, {
-      message: "Password must contain at least one special character",
-    }),
 });
 
-export default function Login() {
+export default function ForgotPassword() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
-      password: "",
     },
   });
 
@@ -49,7 +34,7 @@ export default function Login() {
   }
 
   return (
-    <AuthLayout>
+    <AuthLayout title="Forgot Password" isFormOnly>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormInput<FormValues>
@@ -58,23 +43,11 @@ export default function Login() {
             label="Email"
             placeholder="Input your email"
           />
-          <div className="space-y-2">
-            <FormInput<FormValues>
-              form={form}
-              name="password"
-              label="Password"
-              type="password"
-              placeholder="Input your password"
-            />
-            <Link
-              to="/auth/forgot-password"
-              className="flex justify-end text-sm text-wph-primary-200"
-            >
-              Forgot Password?
-            </Link>
-          </div>
           <Button className="w-full" type="submit">
-            Login
+            Reset Password
+          </Button>
+          <Button asChild variant="ghost" className="w-full" type="submit">
+            <Link to="/auth/login">Back to login</Link>
           </Button>
         </form>
       </Form>

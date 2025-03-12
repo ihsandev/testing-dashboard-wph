@@ -5,6 +5,35 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Theme Color */
+  --wph-primary: oklch(45.41% 0.2082 294.32);
+  --wph-primary-200: oklch(66.88% 0.1964 299.38);
+  --wph-primary-border: oklch(59.81% 0.2541 298.01);
+
+  --wph-success: oklch(28.57% 0.0586 161.78);
+  --wph-success-700: oklch(49.87% 0.1168 157.07);
+  --wph-success-300: oklch(82.74% 0.1293 158.51);
+
+  --wph-warning: oklch(30.13% 0.08 40.87);
+  --wph-warning-700: oklch(53.94% 0.1562 42.99);
+  --wph-warning-500: oklch(74.69% 0.1701 62.11);
+
+  --wph-danger: oklch(17.21% 0.0506 357.33);
+  --wph-danger-700: oklch(35.59% 0.1286 1.8);
+  --wph-danger-500: oklch(50.95% 0.1899 2.69);
+  --wph-danger-400: oklch(58.17% 0.2187 3.09);
+  --wph-danger-300: oklch(68.77% 0.1628 355.91);
+
+  --wph-neutral: oklch(15.82% 0.0118 260.62);
+  --wph-neutral-900: oklch(23.04% 0.0209 264.04);
+  --wph-neutral-800: oklch(28.86% 0.0236 264.1);
+  --wph-neutral-700: oklch(56.5% 0.0165 264.43);
+  --wph-neutral-500: oklch(56.5% 0.0165 264.43);
+  --wph-neutral-400: oklch(72.81% 0.0106 267.33);
+  --wph-neutral-25: oklch(99.4% 0 0);
+  --wph-base-bg: oklch(15.79% 0.0017 196.99);
+  /* End Theme Color */
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -76,6 +105,35 @@
 }
 
 @theme inline {
+  /* Theme Color */
+  --color-wph-primary: var(--wph-primary); /* default 300 */
+  --color-wph-primary-200: var(--wph-primary-200);
+  --color-wph-primary-border: var(--wph-primary-border);
+
+  --color-wph-success: var(--wph-success); /* default 950 */
+  --color-wph-success-700: var(--wph-success-700);
+  --color-wph-success-300: var(--wph-success-300);
+
+  --color-wph-warning: var(--wph-warning); /* default 950 */
+  --color-wph-warning-700: var(--wph-warning-700);
+  --color-wph-warning-500: var(--wph-warning-500);
+
+  --color-wph-danger: var(--wph-danger); /* default 950 */
+  --color-wph-danger-700: var(--wph-danger-700);
+  --color-wph-danger-500: var(--wph-danger-500);
+  --color-wph-danger-400: var(--wph-danger-400);
+  --color-wph-danger-300: var(--wph-danger-300);
+
+  --color-wph-neutral: var(--wph-neutral); /* default 950 */
+  --color-wph-neutral-900: var(--wph-neutral-900);
+  --color-wph-neutral-800: var(--wph-neutral-800);
+  --color-wph-neutral-700: var(--wph-neutral-700);
+  --color-wph-neutral-500: var(--wph-neutral-500);
+  --color-wph-neutral-400: var(--wph-neutral-400);
+  --color-wph-neutral-25: var(--wph-neutral-25);
+  --color-wph-base-bg: var(--wph-base-bg);
+  /* End Theme Color */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -119,6 +177,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-wph-base-bg text-wph-neutral-25;
   }
 }

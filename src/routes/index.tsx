@@ -4,9 +4,11 @@ import {
   RouterProvider,
 } from "@tanstack/react-router";
 import { Route as RootRoute } from "./__root";
-import Login from "@/pages/Auth/login";
-import Dashboard from "@/pages/Dashboard";
+import Login from "@/pages/auth/login";
+import Dashboard from "@/pages/dashboard";
 import { useAuthStore } from "@/features/auth/store";
+import ForgotPassword from "@/pages/auth/forgot-password";
+import ResetPassword from "@/pages/auth/reset-password";
 
 // Redirect logic for `/`
 const redirectRoute = createRoute({
@@ -42,9 +44,23 @@ const loginRoute = createRoute({
   component: Login,
 });
 
+const forgotPasswordRoute = createRoute({
+  getParentRoute: () => RootRoute,
+  path: "/auth/forgot-password",
+  component: ForgotPassword,
+});
+
+const resetPasswordRoute = createRoute({
+  getParentRoute: () => RootRoute,
+  path: "/auth/reset-password",
+  component: ResetPassword,
+});
+
 // Create router instance
 const routeTree = RootRoute.addChildren([
   loginRoute,
+  forgotPasswordRoute,
+  resetPasswordRoute,
   protectedRoute,
   redirectRoute,
 ]);

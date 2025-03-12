@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import AppRouter from "./routes";
 import QueryProvider from "./lib/providers/query-provider";
-import "./index.css";
+import "./styles/index.css";
 
 const rootElement = document.getElementById("app")!;
 if (!rootElement.innerHTML) {
