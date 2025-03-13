@@ -6,9 +6,9 @@ import {
 import { Route as RootRoute } from "./__root";
 import { useAuthStore } from "@/features/auth/store";
 import Login from "../pages/auth/login";
-import Dashboard from "../pages/dashboard";
-import ForgotPassword from "../pages/auth/forgot-password";
-import ResetPassword from "../pages/auth/reset-password";
+import Dashboard from "@/pages/dashboard";
+import ForgotPassword from "@/pages/auth/forgot-password";
+import ResetPassword from "@/pages/auth/reset-password";
 
 // Redirect logic for `/`
 const redirectRoute = createRoute({
