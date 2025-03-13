@@ -1,7 +1,0 @@
-{
-  "build": {
-    "env": {
-      "TSCONFIG_PATHS": "true"
-    }
-  }
-}
