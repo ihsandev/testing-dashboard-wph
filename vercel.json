@@ -3,7 +3,5 @@
     "env": {
       "TSCONFIG_PATHS": "true"
     }
-  },
-  "buildCommand": "vite build",
-  "outputDirectory": "dist"
+  }
 }
